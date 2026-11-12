@@ -4,10 +4,12 @@ title: '#4471 · two date bugs'
 owner: support desk
 status: known
 reviewed: 2026-11-12
-signature: 'v1.eyJzdWIiOiIzNDU2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0NzM3NzcsImV4cCI6MTc5NDU2MDE3N30.gR9J9grU6acfCq0qncxYcERQD-B3t26gUQvAtK2M_KM'
+signature: 'v1.eyJzdWIiOiIzNDU2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0Nzg2NDYsImV4cCI6MTc5NDU2NTA0Nn0.z97cjZBBYHr2GBS9hY3ByAieJGMPIYgs3UxNcUmOp9I'
 ---
 
 Ticket **#4471** holds two different date problems. The component deduplicates the export by report ID before counting; every unique report in this export is merged into #4471.
+
+The desk's 5 October update says the parser was fixed and the booking-v3 hint will not be fixed because that form was retired.
 
 <script>
   import CauseTable from '#lib/kb/CauseTable.svelte';
@@ -22,7 +24,7 @@ The shared date parser reads every date month first. Tenants in day-first locale
 
 The parser cause covers every day-first tenant in the export. Intake tags do not reliably identify the cause: the table shows reports tagged `hint` that still belong to the parser group.
 
-Track the parser fix in [issue #1](https://github.com/czodniki/megadev/issues/1).
+Track the fixed parser cause in [issue #3](https://github.com/czodniki/megadev/issues/3), closed as completed.
 
 ## The booking-v3 hint tells people the wrong order
 
@@ -30,7 +32,7 @@ The booking-v3 form prints `MM/DD/YYYY`, but its day-first tenants need `DD/MM/Y
 
 These form reports need their own issue, separate from the parser issue, even though the desk merged both causes into #4471.
 
-Track the form-hint fix in [issue #2](https://github.com/czodniki/megadev/issues/2).
+Track the retired form-hint cause in [issue #4](https://github.com/czodniki/megadev/issues/4), closed as not planned.
 
 ## Classification notes
 
