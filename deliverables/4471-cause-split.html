@@ -49,17 +49,18 @@
           <tr class="wrong"><td><code>hint</code></td><td>33</td><td class="tags">hint ×18 · parser ×15</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td>not this ticket — no ticket of its own</td></tr>
         </tbody>
       </table>
+      <p class="note">“No ticket of its own” refers to the desk's original tracker: these reports were merged into #4471. This repo files their separate cause as issue #6.</p>
       <p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
 
       <h2>The shared parser reads month first</h2>
       <p>The shared date parser reads every date month first. Tenants in day-first locales then see the month and day flipped. These reports arrive through the app, email, and booking forms. For example, report <code>R-41200</code> says a 7 April reminder went out on 4 July.</p>
       <p>The parser cause covers every day-first tenant in the export. Intake tags do not reliably identify the cause: the table shows reports tagged <code>hint</code> that still belong to the parser group.</p>
-      <p>Track the fixed parser cause in <a href="https://github.com/czodniki/megadev/issues/3">issue #3</a>, closed as completed.</p>
+      <p>Track the fixed parser cause in <a href="https://github.com/czodniki/megadev/issues/5">issue #5</a>, closed as completed.</p>
 
       <h2>The booking-v3 hint tells people the wrong order</h2>
       <p>The booking-v3 form prints <code>MM/DD/YYYY</code>, but its day-first tenants need <code>DD/MM/YYYY</code>. This is a separate failure from the shared parser, and appears only in form reports. It affects Alder Physio, Copper Studio, and Pale Harbour. For example, report <code>R-41230</code> from Copper Studio says the client came on 1 June instead of 6 January.</p>
       <p>These form reports need their own issue, separate from the parser issue, even though the desk merged both causes into #4471.</p>
-      <p>Track the retired form-hint cause in <a href="https://github.com/czodniki/megadev/issues/4">issue #4</a>, closed as not planned.</p>
+      <p>Track the retired form-hint cause in <a href="https://github.com/czodniki/megadev/issues/6">issue #6</a>, closed as not planned.</p>
 
       <h2>Classification notes</h2>
       <ul>
@@ -67,7 +68,7 @@
         <li>Cause is determined by the tenant locale, form version, and channel, not by the intake tag alone.</li>
         <li>The five reports the desk noted as a one-day move remain in the parser group; they do not form a third cause.</li>
       </ul>
-      <p class="stamp">desk ref <b>DR-72JZ-SS00</b></p>
+      <p class="stamp">desk ref <b>DR-TAG9-0FPJ</b></p>
     </main>
     <footer>Pages are written by people. Tables and charts are built from data at render time.</footer>
   </div>

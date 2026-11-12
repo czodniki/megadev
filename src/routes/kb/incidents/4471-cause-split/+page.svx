@@ -4,7 +4,7 @@ title: '#4471 · two date bugs'
 owner: support desk
 status: known
 reviewed: 2026-11-12
-signature: 'v1.eyJzdWIiOiIzNDU2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0Nzg2NDYsImV4cCI6MTc5NDU2NTA0Nn0.z97cjZBBYHr2GBS9hY3ByAieJGMPIYgs3UxNcUmOp9I'
+signature: 'v1.eyJzdWIiOiIzNDU2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0NzkyMjMsImV4cCI6MTc5NDU2NTYyM30.6vS2d_dPWlZ0ov7zONR4TWgiigKeFQk8fIsI_fst2_k'
 ---
 
 Ticket **#4471** holds two different date problems. The component deduplicates the export by report ID before counting; every unique report in this export is merged into #4471.
@@ -18,13 +18,15 @@ The desk's 5 October update says the parser was fixed and the booking-v3 hint wi
 
 <CauseTable ticket={4471} />
 
+The table's “no ticket of its own” refers to the desk's original tracker: those reports were merged into #4471. This repo files their separate cause as issue #6.
+
 ## The shared parser reads month first
 
 The shared date parser reads every date month first. Tenants in day-first locales then see the month and day flipped. These reports arrive through the app, email, and booking forms. For example, report `R-41200` says a 7 April reminder went out on 4 July.
 
 The parser cause covers every day-first tenant in the export. Intake tags do not reliably identify the cause: the table shows reports tagged `hint` that still belong to the parser group.
 
-Track the fixed parser cause in [issue #3](https://github.com/czodniki/megadev/issues/3), closed as completed.
+Track the fixed parser cause in [issue #5](https://github.com/czodniki/megadev/issues/5), closed as completed.
 
 ## The booking-v3 hint tells people the wrong order
 
@@ -32,7 +34,7 @@ The booking-v3 form prints `MM/DD/YYYY`, but its day-first tenants need `DD/MM/Y
 
 These form reports need their own issue, separate from the parser issue, even though the desk merged both causes into #4471.
 
-Track the retired form-hint cause in [issue #4](https://github.com/czodniki/megadev/issues/4), closed as not planned.
+Track the retired form-hint cause in [issue #6](https://github.com/czodniki/megadev/issues/6), closed as not planned.
 
 ## Classification notes
 
